@@ -1,0 +1,531 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+/* ------------------------------------------- HERO -------------------------------------- */
+
+.hero-container {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    background-image: url(../images/home1.jpg);
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+}
+
+.nav {
+    flex: 10%;
+    width: 100%;
+}
+
+.nav ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.nav ul li {
+    font-family: 'KamerikBook';
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: clamp(0.8rem, 0.7rem + 0.333vw, 1.1rem);
+    line-height: 1;
+}
+
+a {
+    color: black;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #29ABE2;
+}
+
+.title {
+    font-family: 'KamerikBold';
+    font-size: clamp(3.5rem, 2.667rem + 2.778vw, 6rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+.hero-motto {
+    flex: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 22rem;
+}
+
+.title {
+    color: black;
+}
+
+.motto {
+    color: black;
+}
+
+.motto p {
+    font-size: clamp(1rem, 0.933rem + 0.222vw, 1.2rem);
+    font-weight: 550;
+}
+
+/* ------------------------------------------- ABOUT ------------------------------------- */
+
+.about-container {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-flow: row wrap;
+    
+    margin-top: 12rem;
+}
+
+.home2-container {
+    flex: 1 1 50%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+}
+
+.home2 {
+    flex: 90%;
+    height: 570px;
+
+    background-image: url(../images/home2.jpg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.text {
+    flex: 1 1 50%;
+    height: auto;
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.text h1 {
+    text-align: center;
+}
+
+.text p {
+    padding-right: 3rem;
+    padding-left: 1.5rem;
+}
+
+.about-container2 {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-flow: row wrap;
+    
+    margin-top: 7rem;
+}
+
+.text-button {
+    flex: 1 1 50%;
+    height: auto;
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-button p {
+    padding-right: 3rem;
+    padding-left: 4rem;
+}
+
+.text-button a {
+    padding-top: 3rem;
+}
+
+button {
+    width: 8rem;
+    height: 2.5rem;
+    background-color: black; 
+    color: white; 
+    border: 2px solid black; 
+    font-family: 'KamerikBook'; 
+    cursor: pointer; 
+    text-transform: uppercase;
+    letter-spacing: 1px; 
+    font-weight: bold; 
+}
+
+button:hover {
+    background-color: white; 
+    color: black; 
+    font-weight: bold;
+}
+
+.about2-c {
+    flex: 1 1 50%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+}
+
+.about2 {
+    flex: 90%;
+    height: 570px;
+
+    background-image: url(../images/about2.jpg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ------------------------------------------- QUOTE ------------------------------------- */
+
+.quote-container {
+    width: 100%;
+    height: auto;
+    margin-top: 12rem;
+}
+
+.home3 {
+    width: 100%;
+    height: auto;
+
+    background-image: url(../images/home3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    text-align: center;
+    padding: 14rem 0;
+}
+
+.home3 p {
+    font-size: clamp(1.4rem, 1.267rem + 0.444vw, 1.8rem);
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.8), 1px 1px 1px rgba(0,0,0,0.8);
+    text-align: center;
+}
+
+/* ------------------------------------------- THREE ------------------------------------- */
+.three {
+    width: 100%;
+    height: auto;
+    margin-top: 12rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.three h1 {
+    padding-left: 13.5rem;
+}
+
+.three-container {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.socialmedia {
+    height: auto;
+    flex: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.socials {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.1rem;
+}
+
+.socialmedia a {
+    width: clamp(2.5rem, 2.292rem + 0.694vw, 3.125rem);
+    height: auto;
+}
+
+.home4 span, .home5 span, .home6 span {
+    font-size: 1.1rem;
+}
+
+.home4-container, .home5-container, .home6-container {
+    flex: 1 0 400px;
+    height: auto;
+    max-width: 450px;
+    
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.home4-container .home4 {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+}
+
+.home5-container .home5 {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+}
+
+.home6-container .home6 {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+}
+
+.home4 {
+    text-align: center;
+    background-image: url(../images/home4.jpg);
+    background-size: cover;
+    background-position:center center;
+    background-repeat: no-repeat;
+}
+
+.home5 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    background-image: url(../images/home5.jpg);
+    background-size: cover;
+    background-position:center center;
+    background-repeat: no-repeat;
+}
+
+.home6 {
+    background-image: url(../images/home6.jpg);
+    background-size: cover;
+    background-position:center center;
+    background-repeat: no-repeat;
+}
+
+.home4 p {
+    padding: 0.5rem;
+    text-align: left;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.home5 p {
+    padding: 0.5rem;
+    color: white;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.home6 p {
+    padding: 0.5rem;
+    text-align: right;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.i-pic {
+    width: 100%;
+    height: 50px;
+
+    background-image: url(../images/instagram.jpg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.t-pic {
+    width: 100%;
+    height: 50px;
+
+    background-image: url(../images/twitter.jpg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.y-pic {
+    width: 100%;
+    height: 50px;
+
+    background-image: url(../images/youtube.jpg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* --------------------------------------- BANNERS ---------------------- */
+
+.banner-container {
+    width: 100%;
+    height: 60%;
+    margin-top: 12rem;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    background-image: url(../images/bannerback.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.banner1 {
+    width: 100%;
+    height: 100px;
+
+    background-image: url(../images/banner1.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.banner2 {
+    width: 100%;
+    height: 100px;
+
+    background-image: url(../images/banner2.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.banner3 {
+    width: 100%;
+    height: 100px;
+
+    background-image: url(../images/banner3.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.banner1-texto, .banner2-texto, .banner3-texto {
+    color: white;
+}
+
+/* ------------------------------------------- MEDIA QUERIES ------------------------------------- */
+
+@media screen and (max-width: 526px) {
+    .nav ul {
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .three h1 {
+        padding-left: 7.6rem;
+    }
+}
+
+@media screen and (max-width: 577px) {
+    .three h1 {
+        padding-left: 5rem;
+    }
+}
+
+@media screen and (max-width: 1488px) {
+    .text-button a {
+        padding-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 1460px) {
+    .about-container, .about-container2 {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%; 
+    }
+
+    .about-container2 {
+        margin-top: 1rem;
+    }
+
+    .home2-container, .about2-c {
+        width: 100%; 
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .home2 {
+        width: 90%;
+        height: 450px; 
+        background-size: cover; 
+        background-position: 50% 75%;
+        background-repeat: no-repeat;
+    } 
+
+    .about2 {
+        width: 90%;
+        height: 450px; 
+        background-size: cover; 
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .text p {
+        padding-left: 6rem;
+        padding-right: 7rem;
+    }
+
+    .text-button p {
+        padding-left: 6rem;
+        padding-right: 7rem;
+    }
+
+    button {
+        margin-bottom: 2rem;
+    }
+
+    h1 {
+        padding-top: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .text p {
+        padding-left: 2rem;
+        padding-right: 3rem;
+    }
+
+    .text-button p {
+        padding-left: 2rem;
+        padding-right: 3rem;
+    }
+}

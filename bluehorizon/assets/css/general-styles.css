@@ -1,0 +1,168 @@
+@font-face {
+    font-family: 'KamerikBook';
+    src: url(../fonts/Kamerik\ 205\ Book.ttf);
+}
+@font-face {
+    font-family: 'KamerikBold';
+    src: url(../fonts/Kamerik\ 205\ Bold.ttf);
+}
+
+h1 {
+    font-family: 'KamerikBold';
+    
+    font-size: clamp(1.6rem, 1.467rem + 0.444vw, 2rem);
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: 'KamerikBold';
+
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    font-size: clamp(1.2rem, 1.067rem + 0.444vw, 1.6rem);
+}
+
+p {
+    font-family: 'KamerikBook';
+    line-height: 2rem;
+    font-size: clamp(1rem, 0.9rem + 0.333vw, 1.3rem);
+    text-align: justify;
+}
+
+p span {
+    font-family: 'KamerikBold';
+    font-weight: 500;
+}
+
+.nav ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-size: clamp(0.8rem, 0.7rem + 0.333vw, 1.1rem);
+}
+
+ul li {
+    font-family: 'KamerikBook';
+    list-style-type: none;
+}
+
+ul li a {
+    text-decoration: none;
+    color: black;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+
+}
+
+a {
+    text-decoration: none;
+    font-weight: 500;
+    color: black;
+}
+
+a:hover {
+    color: #29ABE2;
+}
+
+.title {
+    font-family: 'KamerikBold';
+    font-size: clamp(1.5rem, 1rem + 1.333vw, 2.2rem);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+
+    color: black;
+}
+
+.title span {
+    color: #29ABE2;
+}
+
+.section-hero {
+    height: 33vh;
+    width: 100%;
+}
+
+/* ------------------------------------------- FOOTER ------------------------------------- */
+
+.footer-container {
+    width: 100%;
+    height: auto;
+    margin-top: 12rem;
+    padding-bottom: 5rem;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-container a {
+    color: black;
+}
+
+.footer-container p {
+    font-size: 1.2rem;
+}
+
+.title2 {
+    flex: 4;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'KamerikBold';
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    padding-bottom: 1rem;
+    color: black;
+}
+
+.title2 span {
+    color: #29ABE2;
+}
+
+.terms {
+    flex: 2;
+    height: auto;
+    padding-left: 4rem;
+}
+
+.follow {
+    flex: 2;
+    height: auto;
+    padding-left: 4rem;
+}
+
+.footer-container a:hover {
+    color: #62635f;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+@media screen and (max-width: 940px) {
+    .footer-container {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        text-align: center; 
+    }
+
+    .terms, .follow {
+        text-align: center;
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .terms p, .follow p {
+        text-align: center;
+    }
+}
