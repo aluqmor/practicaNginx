@@ -1,0 +1,21 @@
+server {
+  listen 80;
+  listen [::]:80;
+
+  root /var/www/perfectlearn;
+
+  index index.html index.htm index.php;
+
+  server_name perfectlearn;
+
+  location / {
+
+  allow 192.168.56.1;   
+  deny all;                
+
+  auth_basic "Área restringida"; 
+  auth_basic_user_file /etc/nginx/.htpasswd;
+
+  try_files $uri $uri/ =404;
+  }
+}

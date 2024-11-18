@@ -66,3 +66,73 @@ sudo ln -s /etc/nginx/sites-available/bluehorizon /etc/nginx/sites-enabled/
 # Reiniciar Nginx para aplicar los cambios
 sudo systemctl restart nginx
 # Si da un error de 404 FORFBIDDEN ejecutar el siguiente comando
+
+# PRÁCTICA AUTENTICACIÓN
+# Crear un archivo oculto para guardar el usuario y contraseña (nombre)
+sudo sh -c "echo -n 'alvaro:' > /etc/nginx/.htpasswd"
+sudo sh -c "openssl passwd -apr1 'alvaro' >> /etc/nginx/.htpasswd"
+
+# Crear un archivo oculto para guardar el usuario y contraseña (apellido)
+sudo sh -c "echo -n 'luque:' > /etc/nginx/.htpasswd"
+sudo sh -c "openssl passwd -apr1 'luque' >> /etc/nginx/.htpasswd"
+
+# Agregar los permisos correspondientes
+sudo chown www-data:www-data /etc/nginx/.htpasswd
+sudo chmod 640 /etc/nginx/.htpasswd
+
+# Abrir el archivo de configuración del sitio web
+sudo nano /etc/nginx/sites-available/perfectlearn
+
+# Crear archivo de configuración del sitio en sites-available
+sudo bash -c 'cat > /etc/nginx/sites-available/perfectlearn <<EOF
+server {
+  listen 80;
+  listen [::]:80;
+  root /var/www/perfectlearn;
+  index index.html index.htm index.php;
+  server_name perfectlearn;
+  location / {
+  auth_basic "Área restringida";
+  auth_basic_user_file /etc/nginx/.htpasswd;
+  try_files $uri $uri/ =404;
+  }
+}
+EOF'
+
+# Para poder ver la página web en el navegador, debemos modificar el archivo hosts
+# También hay que darle los permisos correspondientes
+# Creo la nueva carpeta de la pagina web
+sudo mkdir -p /var/www/perfectlearn
+
+# Le doy permisos
+sudo chown www-data:www-data /var/www/perfectlearn
+sudo chmod 775 /var/www/perfectlearn
+
+sudo ln -s /etc/nginx/sites-available/perfectlearn /etc/nginx/sites-enabled/
+
+# Dar permisos de /var/www:
+sudo chown -R www-data:www-data /var/www
+sudo chmod -R 755 /var/www
+
+# Reiniciar Nginx para aplicar los cambios
+sudo systemctl restart nginx
+
+# TAREA 2
+# Ahora voy a borrar las dos lineas de location  para hacer que solo haya autenticación para el contact.html
+# Para ello vamos a cambiar el directorio raiz de "location /" a "location /contact.html"
+# Reiniciar Nginx para aplicar los cambios
+
+# TAREA 3
+# Cambiar el location y poner lo siguiente:
+
+# location /api {
+#   satisfy all;
+#   deny 192.168.1.2;
+#   allow 192.168.1.1/24;
+#   allow 127.0.0.1;
+#   deny all;
+#   auth_basic "Administrator's Area";
+#   auth_basic_user_file /etc/nginx/.htpasswd;
+# }
+
+# TAREA 3.1
