@@ -135,4 +135,37 @@ sudo systemctl restart nginx
 #   auth_basic_user_file /etc/nginx/.htpasswd;
 # }
 
-# TAREA 3.1
+# PRÁCTICA ACCESO SEGURO
+# Crear el archivo para configuración del dominio
+sudo nano /etc/nginx/sites-available/example.com
+
+# Agregar archivo de configuracion example.com
+sudo cp /vagrant/example.com /etc/nginx/sites-available/example.com
+
+# Crear enlace simbolico
+sudo ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/
+
+# Recargar servidor
+sudo systemctl reload nginx
+
+# Instalar el cortafuegos
+sudo apt install ufw
+
+# Activar el tráfico HTTPS
+sudo ufw allow ssh
+sudo ufw allow 'Nginx Full'
+sudo ufw delete allow 'Nginx HTTP'
+
+# Activar el cortafuegos
+sudo ufw --force enable
+
+# Generar certificado autofirmado
+sudo openssl req -x509 -nodes -days 365 \
+  -newkey rsa:2048 -keyout /etc/ssl/private/example.com.key \
+  -out /etc/ssl/certs/example.com.crt
+
+# Añadir uso de certificado SSL
+sudo cp /vagrant/example.com /etc/nginx/sites-available/example.com
+
+# Recargar servidor
+sudo systemctl reload nginx
